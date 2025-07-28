@@ -63,7 +63,7 @@ def try_all_functions_with_visualization(generation_count=100):
     population = life_simulation.simulate_life(population)
     print(f"After simulation: {len(population)}")
 
-    population = life_simulation.exposure_to_radiation(population, 5)
+    population = life_simulation.exposure_to_radiation(population, config.exposure_level)
     population = life_simulation.simulate_life(population)
     print(f"After radiation: {len(population)}")
 
@@ -74,7 +74,7 @@ def try_all_functions_with_visualization(generation_count=100):
             population, config.last_individual_number, generation_number
         )
         population = life_simulation.check_generation_number(population, generation_number)
-        population = life_simulation.exposure_to_radiation(population, 5)
+        population = life_simulation.exposure_to_radiation(population, config.exposure_level)
         population = life_simulation.simulate_life(population)
 
         current_stats = calculate_generation_stats(population)

@@ -47,7 +47,7 @@ if __name__ == "__main__":
     for i in range(try_count):
         population = generate_population.generate_population()
         simulate_life(population)
-        population = exposure_to_radiation(population,5)
+        population = exposure_to_radiation(population,config.exposure_level)
         simulate_life(population)
         avg_alive += len(population)
     print(avg_alive/try_count)

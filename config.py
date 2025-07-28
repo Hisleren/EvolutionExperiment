@@ -5,7 +5,7 @@ else:
     try:
         population_count = int(population_count)
     except ValueError:
-        print("Your input is not a integer, 1000 will be used instead")
+        print(f"Your {population_count} input is not a integer, 1000 will be used instead")
         population_count = 1000
         pass
 generation_number = input("Generation number: ")
@@ -15,7 +15,7 @@ else:
     try:
         generation_number = int(generation_number)
     except ValueError:
-        print("Your input is not a integer, 100 will be used instead")
+        print(f"Your {generation_number} input is not a integer, 100 will be used instead")
         generation_number = 100
         pass
 individual_gene_length = input("Individual gene length: ")
@@ -30,7 +30,6 @@ else:
         pass
 
 reproduction_rate = input("Reproduction Rate: ")
-
 if reproduction_rate == "":
     reproduction_rate = 0.8
 else:
@@ -39,6 +38,16 @@ else:
     except ValueError:
         print(f"Your {reproduction_rate} input is not a float, 0.3 will be used instead")
         reproduction_rate = 0.8
+        pass
+exposure_level = input("Exposure Level To Radiation: ")
+if reproduction_rate == "":
+    exposure_level = 5
+else:
+    try:
+        exposure_level = int(exposure_level)
+    except ValueError:
+        print(f"Your {exposure_level} input is not a float, 0.3 will be used instead")
+        exposure_level = 5
         pass
 
 last_individual_number = population_count
